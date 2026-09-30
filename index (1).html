@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anuj Yadav | Data Analyst Portfolio</title>
+<meta name="description" content="Anuj Yadav: aspiring data analyst with hands-on Excel, SQL, Python and Power BI projects.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='28' fill='%238B6CFF'/><text x='50' y='68' font-size='54' font-weight='800' text-anchor='middle' fill='white' font-family='sans-serif'>AY</text></svg>">
+<meta property="og:title" content="Anuj Yadav | Data Analyst Portfolio">
+<meta property="og:description" content="Python, SQL and Power BI projects, including an AI layer that answers questions about 99,441 orders.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#140F2D;--panel:#1D1646;--glass:rgba(255,255,255,.07);--line:rgba(255,255,255,.17);--tx:#F4F1FF;--mute:#B9B2DB;--violet:#8B6CFF;--mint:#2DD4E8;--coral:#FF6BB5;--sun:#FFC857;--aur:.95;color-scheme:dark;
+--display:'Sora','Segoe UI',sans-serif;--body:'Manrope',system-ui,sans-serif}
+:root[data-theme=light]{--bg:#F5F2FF;--panel:#fff;--glass:rgba(255,255,255,.75);--line:rgba(40,28,100,.16);--tx:#1A1340;--mute:#57507E;--violet:#6A43F5;--mint:#0891B2;--coral:#D6336C;--sun:#B7791F;--aur:.5;color-scheme:light}
+@media (prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#F5F2FF;--panel:#fff;--glass:rgba(255,255,255,.75);--line:rgba(40,28,100,.16);--tx:#1A1340;--mute:#57507E;--violet:#6A43F5;--mint:#0891B2;--coral:#D6336C;--sun:#B7791F;--aur:.5;color-scheme:light}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:400 1.05rem/1.65 var(--body);min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:var(--aur);background:radial-gradient(40% 35% at 12% 8%,rgba(139,108,255,.5),transparent 70%),radial-gradient(35% 30% at 92% 18%,rgba(45,212,232,.3),transparent 70%),radial-gradient(45% 35% at 65% 98%,rgba(255,107,181,.34),transparent 70%)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.top b{font:800 1.3rem var(--display)}
+.top nav{display:flex;gap:10px;flex-wrap:wrap}
+.pill{font:700 .95rem var(--body);text-decoration:none;color:var(--tx);border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(12px);padding:8px 18px;border-radius:99px;cursor:pointer}
+.pill:hover{border-color:var(--mint)}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.tile{background:var(--glass);border:1px solid var(--line);border-radius:30px;padding:28px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.hero{grid-column:span 4;grid-row:span 2;padding:40px 36px;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font:800 clamp(3rem,10vw,6.6rem)/.98 var(--display);letter-spacing:-.045em;background:linear-gradient(100deg,var(--tx) 5%,var(--violet) 50%,var(--coral) 95%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.lead{max-width:32em;margin-top:18px;font-size:1.15rem;color:var(--mute)}
+.status{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:1px solid var(--line);border-radius:99px;padding:8px 18px;margin-top:26px;font-weight:700;font-size:.95rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#4ADE80;animation:ping 2.2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(74,222,128,.6)}100%{box-shadow:0 0 0 12px rgba(74,222,128,0)}}
+.tools{grid-column:span 2}
+.tools h2,.stat h2{font:700 1.15rem var(--display);margin:0 0 4px}
+.tools p.s{color:var(--mute);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font:700 .95rem var(--body);border:1px solid var(--line);background:transparent;color:var(--tx);padding:7px 16px;border-radius:99px;cursor:pointer;transition:background .15s,color .15s,transform .15s}
+.chip:hover{border-color:var(--mint)}
+.chip[aria-pressed=true]{background:var(--mint);color:#06121f;border-color:transparent;transform:scale(1.05)}
+#hint{min-height:1.5em;margin-top:12px;font-size:.92rem;font-weight:700}
+.stat{grid-column:span 2;display:flex;flex-direction:column;justify-content:flex-end}
+.stat b{font:800 3rem/1 var(--display);letter-spacing:-.03em;background:linear-gradient(100deg,var(--sun),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--mute);font-size:.95rem;margin-top:6px}
+h2.sec{font:800 clamp(1.7rem,4vw,2.4rem)/1.1 var(--display);letter-spacing:-.03em;margin:64px 0 18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{--accent:var(--violet);position:relative;overflow:hidden;text-align:left;border:1px solid var(--line);border-radius:30px;padding:30px;cursor:pointer;color:var(--tx);font:inherit;background:var(--glass);backdrop-filter:blur(16px);transition:transform .25s,border-color .25s,box-shadow .25s,opacity .25s}
+.card::before{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-110px;border-radius:50%;background:var(--accent);opacity:.3;filter:blur(50px)}
+.card>*{position:relative}
+.card.c1{--accent:var(--sun)}.card.c2{--accent:var(--mint)}
+.card.big{grid-column:1/-1}
+.card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 24px 50px -24px var(--accent)}
+.card h3{font:800 1.55rem/1.15 var(--display);letter-spacing:-.02em;margin-bottom:8px}
+.card.big h3{font-size:2.1rem}
+.card p{color:var(--mute);max-width:44em}
+.card .tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tag{font-size:.82rem;font-weight:700;border:1px solid var(--line);border-radius:99px;padding:2px 12px}
+.card .open{font-weight:800;color:var(--accent)}
+.card.dim{opacity:.28}.card.lit{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.02)}}
+.bento.bg .tile{grid-column:span 3}
+.bg b{font:700 1.1rem var(--display);display:block;margin-bottom:4px}
+.bg small{color:var(--mute);font-size:.98rem}
+.contact{margin:64px 0 50px;padding:44px 36px;border-radius:36px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(139,108,255,.3),rgba(255,107,181,.22),rgba(45,212,232,.2));backdrop-filter:blur(16px)}
+.contact h2{font:800 clamp(1.8rem,5vw,2.8rem)/1.1 var(--display);letter-spacing:-.03em}
+.contact p{color:var(--mute);margin-top:8px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+/* layer 2 */
+dialog{border:1px solid var(--line);border-radius:32px;padding:0;width:min(860px,94vw);max-height:92vh;background:var(--panel);color:var(--tx);box-shadow:0 40px 90px -30px #000;overflow:auto}
+dialog::backdrop{background:rgba(10,6,30,.7);backdrop-filter:blur(6px)}
+.dh{padding:30px 32px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1;background:linear-gradient(120deg,color-mix(in srgb,var(--accent,var(--violet)) 38%,var(--panel)),var(--panel))}
+.dh h2{font:800 clamp(1.6rem,4vw,2.3rem)/1.1 var(--display);letter-spacing:-.03em;margin:0 54px 10px 0}
+.x{position:absolute;top:20px;right:20px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:var(--tx);font:700 1.3rem var(--body);cursor:pointer}
+.db{padding:6px 32px 32px}
+.db h3{font:700 1.2rem var(--display);margin:28px 0 10px}
+.db ul{padding-left:1.2em;color:var(--mute)}.db li{margin:6px 0}.db p{color:var(--mute)}
+.steps{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--mute)}
+.step{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:8px 14px;font-weight:700;color:var(--tx)}
+.bar{display:grid;grid-template-columns:118px 1fr auto;gap:12px;align-items:center;margin:9px 0;font-weight:700;font-size:.95rem}
+.bar i{display:block;height:16px;border-radius:99px;background:var(--glass);border:1px solid var(--line);overflow:hidden}
+.bar u{display:block;height:100%;width:0;background:var(--c);border-radius:99px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kpis div{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:var(--mute);font-size:.95rem}
+.kpis b{font:800 1.7rem var(--display);display:block;line-height:1.15;color:var(--tx)}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.shots a{display:block;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--glass);text-decoration:none;font-weight:700}
+.shots img{width:100%;display:block}.shots span{display:block;padding:8px 12px}
+.btn{display:inline-block;margin-top:24px;background:linear-gradient(100deg,var(--violet),var(--coral));color:#fff;font-weight:700;text-decoration:none;padding:13px 26px;border-radius:99px}
+@media (max-width:820px){.hero,.tools,.stat,.bento.bg .tile{grid-column:1/-1}.hero{padding:30px 24px}}
+@media (max-width:520px){.bar{grid-template-columns:96px 1fr auto}.dh,.db{padding-left:20px;padding-right:20px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><b>AY</b>
+    <nav><button class="pill" id="theme" type="button">Light mode</button><a class="pill" href="resume.pdf" download>Resume</a><a class="pill" href="#contact">Contact me</a></nav></header>
+
+  <!-- LAYER 1: 30-second summary -->
+  <main>
+  <section class="bento">
+    <div class="tile hero">
+      <h1>Anuj Yadav</h1>
+      <p class="lead">I turn messy data into clear answers. After almost 3 years in US customer-facing roles, I'm moving into data analytics.</p>
+      <div class="status"><span class="dot"></span>Open to Data Analyst internships and entry-level roles</div>
+    </div>
+    <div class="tile tools">
+      <h2>Tap a tool</h2>
+      <p class="s">See which project used it.</p>
+      <div class="chips" id="chips" role="group" aria-label="Filter projects by tool"></div>
+      <p id="hint" aria-live="polite"></p>
+    </div>
+    <div class="tile stat"><b>99,441</b><span>orders analysed in my biggest project</span></div>
+  </section>
+
+  <section id="projects">
+    <h2 class="sec">Two projects, end to end</h2>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section>
+    <h2 class="sec">Where I come from</h2>
+    <div class="bento bg">
+      <div class="tile"><b>Subject Matter Expert, US Voice Process</b><small>Niftel Communication, Nov 2023 to Jul 2026. Customer support and health-plan guidance. Tracked individual and team performance in Excel and explained the reasons behind the trends.</small></div>
+      <div class="tile"><b>Data Analyst Certification</b><small>In progress, expected Oct 2026. Covers Excel, SQL, Tableau, machine learning and generative AI.</small></div>
+      <div class="tile"><b>B.Com, Lucknow University</b><small>Graduated 2024.</small></div>
+      <div class="tile"><b>Job simulations (Forage)</b><small>Deloitte Australia: Data Analytics. Tata: Data Visualisation.</small></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Let's talk</h2>
+    <p>Open to Data Analyst internships and entry-level roles. I reply to every email.</p>
+    <div class="links">
+      <a class="pill" href="resume.pdf" download>Download resume</a>
+      <a class="pill" href="mailto:anujydv18@gmail.com">anujydv18@gmail.com</a>
+      <a class="pill" href="https://www.linkedin.com/in/anuj-yadav-538192253" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="pill" id="gh" href="https://github.com/anujydv18-oss" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+  </main>
+</div>
+
+<!-- LAYER 2: project deep dive -->
+<dialog id="dlg" aria-labelledby="dt">
+  <div class="dh" id="dhead"><button class="x" id="close" aria-label="Close project details">&times;</button><h2 id="dt"></h2><div id="dtag"></div></div>
+  <div class="db" id="dbody"></div>
+</dialog>
+
+<script>
+// ====== EDIT THESE ======
+const GITHUB_PROFILE = "https://github.com/anujydv18-oss";
+const REPO_CALL = GITHUB_PROFILE; // TODO: paste your Call Center repo link
+const PROJECTS = [
+ {id:"olist", color:"var(--sun)", cls:"c1 big",
+  title:"AI-Sales-Analyst",
+  blurb:"A four-phase analysis of 99,441 e-commerce orders: Python, SQL, a Power BI dashboard, and an AI layer that answers questions in plain English.",
+  tools:["Python","SQL","Power BI"],
+  repo:GITHUB_PROFILE+"/AI-Sales-Analyst",
+  problem:"An online marketplace has thousands of orders but no clear view of what drives sales, late deliveries and customer satisfaction. I used the public Olist dataset and built the answer in four phases.",
+  flow:["Python: clean and explore","SQL: query 8 MySQL tables","Power BI: 3-page dashboard","AI: ask questions in plain English"],
+  kpis:[["99,441","orders analysed"],["8","tables in MySQL"],["3","dashboard pages"]],
+  shotsTitle:"The dashboard",
+  shots:[["assets/dashboard-sales.png","Sales overview"],["assets/dashboard-delivery.png","Delivery performance"],["assets/dashboard-customer.png","Customer and satisfaction"]],
+  did:["Cleaned and explored the data in a Python notebook, with charts for revenue trend, top categories, late delivery by year, and review score against delivery status.","Loaded the data into MySQL and wrote SQL analysis across 8 tables.","Built a 3-page Power BI dashboard (Sales Overview, Delivery Performance, Customer and Satisfaction) with DAX measures and synced slicers for month and state.","Built an AI layer with Google Gemini: ask a question in English, get SQL, run it on MySQL and read the result. It only allows SELECT queries and caps long outputs.","A second script writes an automatic three-paragraph summary of the key metrics."]},
+ {id:"call", color:"var(--mint)", cls:"c2",
+  title:"Call Center Performance Analysis",
+  blurb:"32,941 support calls cleaned in Python and turned into a Power BI dashboard.",
+  tools:["Python","Power BI"],
+  repo:REPO_CALL,
+  problem:"A call center wants to know why customers call, how they feel afterwards, and which channel satisfies them most. I cleaned the data in pandas and built a dashboard to show it.",
+  kpis:[["32,941","calls analysed (Oct 2020)"],["5.55","average CSAT (of rated calls)"],["25.02 min","average call duration"]],
+  barsTitle:"How customers felt",
+  bars:[["Negative",33.58,"var(--coral)"],["Neutral",26.57,"var(--sun)"],["Very negative",18.29,"var(--violet)"],["Positive",11.92,"var(--mint)"],["Very positive",9.62,"#8EF0C0"]],
+  did:["Billing questions were the main reason for calling, about 20,000 of the calls.","Call-center CSAT was highest (about 5.6); web, chatbot and email were close behind at about 5.5.","About 62.7% of calls had no CSAT score, so I flagged that the average reflects only roughly 12,271 rated calls.","Daily volume held near 1,000 calls, with a sharp dip at month end."]}
+];
+const TOOLS=["Excel","SQL","Python","Power BI"];
+const EXCEL_NOTE="Excel: I used it at work to track team performance and explain trends. My featured projects use the tools above.";
+// ========================
+
+const $=s=>document.querySelector(s);
+const chips=$("#chips"),cards=$("#cards"),hint=$("#hint"),dlg=$("#dlg");
+$("#gh").href=GITHUB_PROFILE;
+let active=null;
+
+TOOLS.forEach(t=>{const b=document.createElement("button");b.className="chip";b.textContent=t;b.setAttribute("aria-pressed","false");
+ b.onclick=()=>{active=active===t?null:t;filter()};chips.append(b)});
+
+PROJECTS.forEach(p=>{const b=document.createElement("button");b.className="card "+p.cls;b.dataset.id=p.id;
+ b.innerHTML=`<h3>${p.title}</h3><p>${p.blurb}</p><div class="tags">${p.tools.map(t=>`<span class="tag">${t}</span>`).join("")}</div><span class="open">Open the full story</span>`;
+ b.onclick=()=>openProject(p);cards.append(b)});
+
+function filter(){
+ [...chips.children].forEach(c=>c.setAttribute("aria-pressed",String(c.textContent===active)));
+ let hits=0;
+ PROJECTS.forEach(p=>{const el=cards.querySelector(`[data-id=${p.id}]`);
+  const m=!active||p.tools.includes(active);el.classList.toggle("dim",!m);el.classList.remove("lit");
+  if(active&&m){hits++;void el.offsetWidth;el.classList.add("lit")}});
+ hint.textContent=!active?"":hits?`${active} is used in ${hits===PROJECTS.length?"all":hits} ${hits===1?"project":"projects"} below.`:(active==="Excel"?EXCEL_NOTE:"");
+}
+
+function openProject(p){
+ $("#dt").textContent=p.title;
+ $("#dtag").innerHTML=p.tools.map(t=>`<span class="tag">${t}</span>`).join(" ");
+ dlg.style.setProperty("--accent",p.color);
+ let h=`<h3>The problem</h3><p>${p.problem}</p>`;
+ if(p.flow)h+=`<h3>How I worked</h3><div class="steps">${p.flow.map((s,i)=>(i?"<span aria-hidden='true'>then</span>":"")+`<span class="step">${s}</span>`).join("")}</div>`;
+ if(p.kpis)h+=`<h3>The numbers</h3><div class="kpis">${p.kpis.map(k=>`<div><b>${k[0]}</b>${k[1]}</div>`).join("")}</div>`;
+ if(p.bars){const mx=Math.max(...p.bars.map(b=>b[1]));h+=`<h3>${p.barsTitle}</h3>${p.bars.map(b=>`<div class="bar"><span>${b[0]}</span><i><u data-w="${(b[1]/mx*100).toFixed(1)}" style="--c:${b[2]}"></u></i><span>${b[3]||b[1]+"%"}</span></div>`).join("")}`}
+ if(p.shots)h+=`<h3>${p.shotsTitle}</h3><div class="shots">${p.shots.map(x=>`<a href="${x[0]}" target="_blank" rel="noopener"><img src="${x[0]}" alt="${x[1]}" loading="lazy" onerror="this.parentElement.style.display='none'"><span>${x[1]}</span></a>`).join("")}</div>`;
+ h+=`<h3>${p.kpis?"What I found":"What I did"}</h3><ul>${p.did.map(d=>`<li>${d}</li>`).join("")}</ul>`;
+ h+=`<a class="btn" href="${p.repo}" target="_blank" rel="noopener">View code on GitHub</a>`;
+ $("#dbody").innerHTML=h;dlg.showModal();dlg.scrollTop=0;
+ requestAnimationFrame(()=>setTimeout(()=>dlg.querySelectorAll("u[data-w]").forEach(u=>u.style.width=u.dataset.w+"%"),60));
+}
+const root=document.documentElement,tb=$("#theme");
+function setTheme(t){root.dataset.theme=t;tb.textContent=t==="dark"?"Light mode":"Dark mode";try{localStorage.setItem("theme",t)}catch(e){}}
+let saved=null;try{saved=localStorage.getItem("theme")}catch(e){}
+setTheme(saved||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));
+tb.onclick=()=>setTheme(root.dataset.theme==="dark"?"light":"dark");
+$("#close").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+</script>
+</body>
+</html>
